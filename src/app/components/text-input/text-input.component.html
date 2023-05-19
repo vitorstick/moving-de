@@ -1,0 +1,16 @@
+<form class="speech-form" [formGroup]="formGroup">
+  <mat-form-field class="full-width">
+    <mat-label>text to speak</mat-label>
+    <textarea matInput formControlName="text"></textarea>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    (click)="onSubmit()"
+    [disabled]="!formGroup.valid"
+  >
+    Translate it!!
+  </button>
+</form>

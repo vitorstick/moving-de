@@ -1,0 +1,3 @@
+<app-text-input (textSubmit)="handleSubmitText($event)" />
+
+<app-speech [text]="translatedText$ | async" [originalText]="originalText()" />
