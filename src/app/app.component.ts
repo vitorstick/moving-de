@@ -3,8 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { NgSwitch, NgSwitchDefault, NgSwitchCase } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
-import { SpeechComponent } from './components/speech/speech.component';
-import { TranslateComponent } from './container/translate/translate.component';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +16,6 @@ import { TranslateComponent } from './container/translate/translate.component';
     RouterOutlet,
     MatButtonModule,
     HeaderComponent,
-    SpeechComponent,
-    TranslateComponent,
   ],
 })
 export class AppComponent {

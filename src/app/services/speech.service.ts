@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { RouteData } from '../models/route-data';
 
 @Injectable({
   providedIn: 'root',
@@ -6,9 +7,17 @@ import { Injectable } from '@angular/core';
 export class SpeechService {
   synthesis = window.speechSynthesis;
 
-  start(text: string, rate = 1) {
+  start(
+    text: string,
+    rate = 1,
+    routeData: RouteData = {
+      lang: 'en',
+      langTo: 'de-DE',
+      voice: 'Google Deutsch',
+    }
+  ) {
     const textToSpeech = new SpeechSynthesisUtterance(text);
-    textToSpeech.lang = 'de-DE';
+    textToSpeech.lang = routeData.langTo;
     textToSpeech.text = text;
     textToSpeech.rate = rate;
 
@@ -23,9 +32,9 @@ export class SpeechService {
     textToSpeech.onstart = function () {
       console.info('SpeechSynthesisUtterance.onstart');
     };
-    // GET DEUTSCH VOICE
+    // GET VOICE
     const voice = speechSynthesis.getVoices().filter((voice) => {
-      return voice.name === 'Google Deutsch';
+      return voice.name === routeData.voice;
     })[0];
     textToSpeech.voice = voice;
 

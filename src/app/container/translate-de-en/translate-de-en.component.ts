@@ -1,27 +1,21 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  signal,
-} from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Component, signal, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { SpeechComponent } from 'src/app/components/speech/speech.component';
 import { TextInputComponent } from 'src/app/components/text-input/text-input.component';
-import { TranslateApiService } from 'src/app/services/translate.api.service';
 import { GoogleTranslateApiResponse } from 'src/app/models/google-translate-api';
-import { SpeechComponent } from '../../components/speech/speech.component';
 import { RouteData } from 'src/app/models/route-data';
+import { TranslateApiService } from 'src/app/services/translate.api.service';
 
 @Component({
-  selector: 'app-translate',
+  selector: 'app-translate-de-en',
   standalone: true,
-  templateUrl: './translate.component.html',
-  styleUrls: ['./translate.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TextInputComponent, SpeechComponent, AsyncPipe, RouterModule],
+  templateUrl: './translate-de-en.component.html',
+  styleUrls: ['./translate-de-en.component.scss'],
+  imports: [TextInputComponent, SpeechComponent, AsyncPipe],
 })
-export class TranslateComponent implements OnInit {
+export class TranslateDeEnComponent implements OnInit {
   translatedText$!: Observable<string>;
   routeData!: RouteData;
 
@@ -41,7 +35,7 @@ export class TranslateComponent implements OnInit {
     this.originalText.set(text);
 
     this.translatedText$ = this.translateApi
-      .translate(text, this.routeData.lang ?? 'de')
+      .translate(text, this.routeData.lang ?? 'en')
       .pipe(
         map(
           (res: GoogleTranslateApiResponse) =>

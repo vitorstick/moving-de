@@ -1,10 +1,23 @@
 <mat-toolbar>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
+  <div class="nav-bar">
+    <div class="nav-bar--left-section">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="buttons-navigation">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle routerLink="/en-de" value="italic"
+          >EN to GE</mat-button-toggle
+        >
+        <mat-button-toggle routerLink="/de-en" value="underline"
+          >GE to EN</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+  </div>
 </mat-toolbar>
