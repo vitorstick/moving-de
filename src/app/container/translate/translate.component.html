@@ -1,3 +1,9 @@
+<h2 class="translate-title">Translate to Deustch</h2>
+
 <app-text-input (textSubmit)="handleSubmitText($event)" />
 
-<app-speech [text]="translatedText$ | async" [originalText]="originalText()" />
+<app-speech
+  [text]="translatedText$ | async"
+  [originalText]="originalText()"
+  [routeData]="routeData"
+/>
