@@ -10,7 +10,6 @@ import { TranslateApiService } from 'src/app/services/translate.api.service';
   selector: 'app-speech-recognition',
   standalone: true,
   templateUrl: './speech-recognition.component.html',
-  styleUrls: ['./speech-recognition.component.scss'],
   imports: [RecognitionComponent, AsyncPipe, SpeechComponent],
 })
 export class SpeechRecognitionComponent {
