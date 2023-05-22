@@ -1,0 +1,22 @@
+<div class="recognition-container">
+  <div class="recognition-container--title">
+    <h2>Speech Recognition</h2>
+  </div>
+  <div class="recognition-container--buttons">
+    <button
+      mat-button
+      color="primary"
+      aria-label="play-button with play icon"
+      (click)="handleButtonStartClick($event)"
+    >
+      <mat-icon>mic</mat-icon> Speack to the microphone
+    </button>
+  </div>
+
+  <ng-container *ngIf="spokenText() && spokenText().length">
+    <div class="recognition-container--title">
+      <span>Did you said? </span>
+      <b>{{ spokenText() }}</b>
+    </div>
+  </ng-container>
+</div>

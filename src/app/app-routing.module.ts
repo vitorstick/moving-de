@@ -18,6 +18,13 @@ const routes: Routes = [
         (mod) => mod.TranslateDeEnComponent
       ),
   },
+  {
+    path: 'speak',
+    loadComponent: () =>
+      import(
+        './container/speech-recognition/speech-recognition.component'
+      ).then((mod) => mod.SpeechRecognitionComponent),
+  },
   // default route is en-de
   {
     path: '',
