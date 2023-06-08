@@ -1,20 +1,30 @@
 <div class="speech-container">
   <div class="speech-container--speech">
     <span class="speech-container--speech-original">{{ originalText }}</span>
-    <strong>{{ text }}</strong>
+    <div class="speech-container--speech-converted">
+      {{ text }}
+      <ng-container *ngIf="!!text">
+        <button
+          mat-icon-button
+          color="primary"
+          aria-label="copy"
+          (click)="copyToClipboard(text)"
+        >
+          <mat-icon>launch</mat-icon>
+        </button>
+      </ng-container>
+    </div>
   </div>
   <div class="speech-container--buttons">
     <button
-      mat-button
-      color="primary"
+      mat-raised-button
       aria-label="play-button with play icon"
       (click)="handleButtonStartClick($event)"
     >
       <mat-icon>play_circle</mat-icon> Say it!!
     </button>
     <button
-      mat-button
-      color="primary"
+      mat-raised-button
       aria-label="stop-button with stop icon"
       (click)="handleButtonStartSlowClick($event)"
     >

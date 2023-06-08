@@ -34,7 +34,6 @@ export class TranslateComponent implements OnInit {
 
   ngOnInit() {
     this.routeData = this.route.snapshot.data as RouteData;
-    console.log(this.routeData);
   }
 
   handleSubmitText(text: string) {

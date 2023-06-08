@@ -1,8 +1,11 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   EventEmitter,
   Output,
+  ViewChild,
 } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,12 +24,18 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatInputModule, MatButtonModule, ReactiveFormsModule],
 })
-export class TextInputComponent {
+export class TextInputComponent implements AfterViewInit {
   @Output() textSubmit = new EventEmitter<string>();
+
+  @ViewChild('textArea') textArea!: ElementRef<HTMLTextAreaElement>;
 
   formGroup = new FormGroup({
     text: new FormControl('', [Validators.required]),
   });
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.textArea.nativeElement.focus(), 0);
+  }
 
   onSubmit(): void {
     if (this.formGroup.value.text) {
