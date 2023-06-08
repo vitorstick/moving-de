@@ -1,0 +1,89 @@
+{
+  "configVersion": 1,
+  "timestamp": 1686255010861,
+  "index": "https://vitorstick.github.io/moving-de/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://vitorstick.github.io/moving-de/173.a2a0dc46fb9d6cc8.js",
+        "https://vitorstick.github.io/moving-de/318.aee46112ce23564d.js",
+        "https://vitorstick.github.io/moving-de/740.59ecb3c062526627.js",
+        "https://vitorstick.github.io/moving-de/870.bc8631efe567c345.js",
+        "https://vitorstick.github.io/moving-de/971.0418320df42286d2.js",
+        "https://vitorstick.github.io/moving-de/favicon.ico",
+        "https://vitorstick.github.io/moving-de/index.html",
+        "https://vitorstick.github.io/moving-de/main.e0d80232e60c8326.js",
+        "https://vitorstick.github.io/moving-de/manifest.webmanifest",
+        "https://vitorstick.github.io/moving-de/polyfills.2fbeb3e45282e452.js",
+        "https://vitorstick.github.io/moving-de/runtime.ee33a558b2218339.js",
+        "https://vitorstick.github.io/moving-de/styles.890c767bf084a990.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-144x144.png",
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-192x192.png",
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-48x48.png",
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-512x512.png",
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-72x72.png",
+        "https://vitorstick.github.io/moving-de/assets/icons/icon-96x96.png",
+        "https://vitorstick.github.io/moving-de/assets/images/logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://vitorstick.github.io/moving-de/173.a2a0dc46fb9d6cc8.js": "3b8f5725a1b54e8f2c05cf61d0deac54588b3b8e",
+    "https://vitorstick.github.io/moving-de/318.aee46112ce23564d.js": "b00e3c63779f3967f3f04625415d5e944c44642b",
+    "https://vitorstick.github.io/moving-de/740.59ecb3c062526627.js": "3ea75402e44378cfafa531c8194e88bc6670dfc3",
+    "https://vitorstick.github.io/moving-de/870.bc8631efe567c345.js": "ce688da6c4750c7b0560a80b4c18fcb345e091e9",
+    "https://vitorstick.github.io/moving-de/971.0418320df42286d2.js": "5f83cd76f3c0b74788de3a30f19c249486c9945f",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-144x144.png": "3ac0570cbc1c9142d8991d264ef2459794c832b3",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-192x192.png": "53460d70ffe3e3766dc363d62d79457eb6dc78cf",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-48x48.png": "161cd04f17446d36e79a52651e079823ec8207fe",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-512x512.png": "4bdcd43c5a4e774be6ce5653d35fb9857beb95a6",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-72x72.png": "0f18fa6b7f1fb6bb2d18240f2cbb7b438d87cf41",
+    "https://vitorstick.github.io/moving-de/assets/icons/icon-96x96.png": "9eef4714ee031ebbde57a45ea22ea4cdf9e2a480",
+    "https://vitorstick.github.io/moving-de/assets/images/logo.png": "b9bd3e163e774d4eef93016dc01633918a43d76f",
+    "https://vitorstick.github.io/moving-de/favicon.ico": "20d97c15def759cf1dbd420da22c2f350b74ab7b",
+    "https://vitorstick.github.io/moving-de/index.html": "30c2421e606c3e3c994d19cc342ec5e3c15dc36e",
+    "https://vitorstick.github.io/moving-de/main.e0d80232e60c8326.js": "4316bfe16873541505725635ed9325f3927fffbb",
+    "https://vitorstick.github.io/moving-de/manifest.webmanifest": "3a45b50a1fd96d0f66f858ae32a4d3932243e6b5",
+    "https://vitorstick.github.io/moving-de/polyfills.2fbeb3e45282e452.js": "e539d8e1435f06b891b99256cc23d06adb48080b",
+    "https://vitorstick.github.io/moving-de/runtime.ee33a558b2218339.js": "78a9cc56db565d0d1065ef859964715dacb69972",
+    "https://vitorstick.github.io/moving-de/styles.890c767bf084a990.css": "b3c92fa9afb2668b1abaf3486456d5f993485f1d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
