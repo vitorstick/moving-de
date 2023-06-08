@@ -34,7 +34,11 @@ export class TextInputComponent implements AfterViewInit {
   });
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.textArea.nativeElement.focus(), 0);
+    setTimeout(() => {
+      this.textArea.nativeElement.focus();
+      // to make keyboard appear on mobile
+      this.textArea.nativeElement.click();
+    }, 0);
   }
 
   onSubmit(): void {
