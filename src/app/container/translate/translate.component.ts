@@ -1,17 +1,16 @@
+import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   OnInit,
   signal,
 } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { TextInputComponent } from 'src/app/components/text-input/text-input.component';
-import { TranslateApiService } from 'src/app/services/translate.api.service';
-import { GoogleTranslateApiResponse } from 'src/app/models/google-translate-api';
-import { SpeechComponent } from '../../components/speech/speech.component';
 import { RouteData } from 'src/app/models/route-data';
+import { TranslateApiService } from 'src/app/services/translate.api.service';
+import { SpeechComponent } from '../../components/speech/speech.component';
 
 @Component({
   selector: 'app-translate',
@@ -43,8 +42,11 @@ export class TranslateComponent implements OnInit {
       .translate(text, this.routeData.lang ?? 'de')
       .pipe(
         map(
-          (res: GoogleTranslateApiResponse) =>
-            res.data.translations[0].translatedText
+          (res: any) =>
+           {
+            console.log(res);
+            return res[0][0][0]
+          }
         )
       );
   }

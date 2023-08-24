@@ -1,10 +1,9 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { SpeechComponent } from 'src/app/components/speech/speech.component';
 import { TextInputComponent } from 'src/app/components/text-input/text-input.component';
-import { GoogleTranslateApiResponse } from 'src/app/models/google-translate-api';
 import { RouteData } from 'src/app/models/route-data';
 import { TranslateApiService } from 'src/app/services/translate.api.service';
 
@@ -37,8 +36,8 @@ export class TranslateDeEnComponent implements OnInit {
       .translate(text, this.routeData.lang ?? 'en')
       .pipe(
         map(
-          (res: GoogleTranslateApiResponse) =>
-            res.data.translations[0].translatedText
+          (res: any) =>
+          res[0][0][0]
         )
       );
   }

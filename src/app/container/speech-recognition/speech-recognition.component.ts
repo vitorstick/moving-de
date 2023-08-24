@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { Component } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { RecognitionComponent } from 'src/app/components/recognition/recognition.component';
 import { SpeechComponent } from 'src/app/components/speech/speech.component';
-import { GoogleTranslateApiResponse } from 'src/app/models/google-translate-api';
 import { TranslateApiService } from 'src/app/services/translate.api.service';
 
 @Component({
@@ -25,8 +24,8 @@ export class SpeechRecognitionComponent {
       .translate(text, 'en')
       .pipe(
         map(
-          (res: GoogleTranslateApiResponse) =>
-            res.data.translations[0].translatedText
+          (res: any) =>
+            res[0][0][0]
         )
       );
   }
