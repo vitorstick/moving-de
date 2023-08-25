@@ -10,3 +10,8 @@ Don't forget to run `npm install` first.
 
 run `ng deploy --base-href=https://vitorstick.github.io/moving-de/` to deploy to github pages (https://vitorstick.github.io/moving-de/)
 the branch gh-pages is used for deployment
+
+Before deploy just delete gh-pages branch locally and from origin
+git branch -D gh-pages && git push origin --delete gh-pages
+
+you can run the ng deploy command from any branch, it will create the gh-pages branch and deploy it to github pages
