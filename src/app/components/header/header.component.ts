@@ -1,10 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { LanguageService } from 'src/app/services/language.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { changeLanguageAction } from 'src/app/store/actions/translations.actions';
+import { selectFeatureLanguage } from 'src/app/store/selectors';
 import { HeaderSelectLanguageComponent } from '../header-select-language/header-select-language.component';
 
 @Component({
@@ -20,14 +24,19 @@ import { HeaderSelectLanguageComponent } from '../header-select-language/header-
     MatButtonToggleModule,
     RouterModule,
     HeaderSelectLanguageComponent,
+    AsyncPipe,
   ],
 })
-export class HeaderComponent {
-  lang = this.lgService.getLanguage();
-  constructor(private lgService: LanguageService) {}
+export class HeaderComponent implements OnInit {
+  lang$!: Observable<string>;
+
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.lang$ = this.store.select(selectFeatureLanguage);
+  }
 
   onLanguageChange(lang: string) {
-    this.lgService.setLanguage(lang);
-    this.lang = lang;
+    this.store.dispatch(changeLanguageAction({ language: lang }));
   }
 }

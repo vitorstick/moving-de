@@ -22,6 +22,9 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "@angular/service-worker": "^18.1.0",
+    "@ngrx/effects": "^18.0.1",
+    "@ngrx/store": "^18.0.1",
+    "@ngrx/store-devtools": "^18.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.7"
@@ -35,6 +38,7 @@
     "@angular-eslint/template-parser": "^18.1.0",
     "@angular/cli": "~18.1.0",
     "@angular/compiler-cli": "^18.1.0",
+    "@ngrx/eslint-plugin": "^18.0.1",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.59.2",
     "@typescript-eslint/parser": "5.59.2",

@@ -1,3 +1,4 @@
+@if (lang$ | async; as lang) {
 <mat-toolbar>
   <div class="nav-bar">
     <div class="nav-bar--left-section">
@@ -5,6 +6,7 @@
         <img src="assets/images/logo.png" alt="logo" />
       </a>
     </div>
+
     <div class="buttons-navigation">
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
         <mat-button-toggle routerLink="/en-de" value="en-de" checked="true"
@@ -25,3 +27,4 @@
     </div>
   </div>
 </mat-toolbar>
+}
