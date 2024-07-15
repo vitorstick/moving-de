@@ -8,15 +8,20 @@
     <div class="buttons-navigation">
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
         <mat-button-toggle routerLink="/en-de" value="en-de" checked="true"
-          >EN to GE</mat-button-toggle
+          >EN to {{ lang }}</mat-button-toggle
         >
         <mat-button-toggle routerLink="/de-en" value="de-en"
-          >GE to EN</mat-button-toggle
+          >{{ lang }} to EN</mat-button-toggle
         >
         <mat-button-toggle routerLink="/speak" value="speak"
           >Speak</mat-button-toggle
         >
       </mat-button-toggle-group>
+    </div>
+    <div class="nav-bar--right-section">
+      <app-header-select-language
+        (languageChangeEmit)="onLanguageChange($event)"
+      ></app-header-select-language>
     </div>
   </div>
 </mat-toolbar>
