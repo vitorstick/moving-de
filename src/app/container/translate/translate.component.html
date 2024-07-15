@@ -4,6 +4,6 @@
 
 <app-speech
   [text]="translatedText$ | async"
-  [originalText]="originalText()"
+  [originalText]="originalText$ | async"
   [routeData]="routeData"
 />

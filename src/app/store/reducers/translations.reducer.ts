@@ -12,5 +12,30 @@ export const translationReducer = createReducer(
         language,
       };
     }
-  )
+  ),
+  on(
+    TranslationsActions.translateAction,
+    (state, { key }): TranslationsState => {
+      return {
+        ...state,
+        originalString: key,
+        translatedString: null,
+      };
+    }
+  ),
+  on(
+    TranslationsActions.translateSuccessAction,
+    (state, { translation }): TranslationsState => {
+      return {
+        ...state,
+        translatedString: translation,
+      };
+    }
+  ),
+  on(TranslationsActions.translateFailureAction, (state): TranslationsState => {
+    return {
+      ...state,
+      translatedString: null,
+    };
+  })
 );

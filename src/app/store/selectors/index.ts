@@ -14,3 +14,13 @@ export const selectFeatureLanguage = createSelector(
   selectFeature,
   (state) => state.language
 );
+
+export const selectFeatureOriginalString = createSelector(
+  selectFeature,
+  (state) => state.originalString
+);
+
+export const selectFeatureTranslatedString = createSelector(
+  selectFeature,
+  (state) => state.translatedString
+);
