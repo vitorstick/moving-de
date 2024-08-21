@@ -19,4 +19,9 @@ export class TranslateApiService {
 
     return this.http.get<any>(url);
   }
+
+  addPost(post: any) {
+    console.log('Post:', post);
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', post);
+  }
 }

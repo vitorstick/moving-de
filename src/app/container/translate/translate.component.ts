@@ -28,6 +28,8 @@ export class TranslateComponent implements OnInit {
 
   originalText = signal<string>('');
 
+  typicodePostResponse$!: Observable<any>;
+
   constructor(
     private translateApi: TranslateApiService,
     private route: ActivatedRoute,
@@ -39,6 +41,7 @@ export class TranslateComponent implements OnInit {
   }
 
   handleSubmitText(text: string) {
+    console.log('Text:', text);
     this.originalText.set(text);
 
     this.language = this.lgService.getLanguage();
@@ -49,6 +52,19 @@ export class TranslateComponent implements OnInit {
         map((res: any) => {
           console.log(res);
           return res[0][0][0];
+        })
+      );
+
+    this.typicodePostResponse$ = this.translateApi
+      .addPost({
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+      })
+      .pipe(
+        map((res) => {
+          console.log(res);
+          return res;
         })
       );
   }

@@ -3,3 +3,5 @@
 <app-text-input (textSubmit)="handleSubmitText($event)" />
 
 <app-speech [text]="originalText()" [originalText]="translatedText$ | async" />
+
+<div>{{ typicodePostResponse$ | async }}</div>

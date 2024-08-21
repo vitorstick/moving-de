@@ -19,6 +19,8 @@ export class TranslateDeEnComponent {
 
   originalText = signal<string>('');
 
+  typicodePostResponse$!: Observable<any>;
+
   constructor(private translateApi: TranslateApiService) {}
 
   handleSubmitText(text: string) {
@@ -27,5 +29,18 @@ export class TranslateDeEnComponent {
     this.translatedText$ = this.translateApi
       .translate(text, 'en')
       .pipe(map((res: any) => res[0][0][0]));
+
+    this.typicodePostResponse$ = this.translateApi
+      .addPost({
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+      })
+      .pipe(
+        map((res) => {
+          console.log(res);
+          return res;
+        })
+      );
   }
 }
